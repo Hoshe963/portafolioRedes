@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epic Games Launcher</title>
+    
+    <!-- Enlace a la hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="epic-launcher">
+        <!-- ================== BARRA LATERAL DE NAVEGACIÓN ================== -->
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <!-- Puedes reemplazar esto con un logo SVG de Epic Games -->
+                <i class="fa-brands fa-epic-games"></i>
+                <span>EPIC GAMES</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="nav-link" data-view="store"><i class="fa-solid fa-store"></i><span>Tienda</span></a></li>
+                    <li><a href="#" class="nav-link active" data-view="library"><i class="fa-solid fa-gamepad"></i><span>Biblioteca</span></a></li>
+                    <li><a href="#" class="nav-link" data-view="downloads"><i class="fa-solid fa-download"></i><span>Descargas</span></a></li>
+                    <li><a href="#" class="nav-link" data-view="friends"><i class="fa-solid fa-user-group"></i><span>Amigos</span></a></li>
+                    <li><a href="#" class="nav-link" data-view="unreal"><i class="fa-brands fa-unreal"></i><span>Unreal Engine</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="nav-link" data-view="settings"><i class="fa-solid fa-gear"></i><span>Ajustes</span></a>
+                <a href="#" class="nav-link" data-view="profile"><i class="fa-solid fa-circle-user"></i><span>Mi Perfil</span></a>
+            </div>
+        </aside>
+
+        <!-- ================== CONTENIDO PRINCIPAL ================== -->
+        <main id="main-content">
+            <header class="content-header">
+                <h1 id="view-title">Biblioteca</h1>
+                <div class="header-controls">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="game-search-input" placeholder="Buscar...">
+                    </div>
+                    <div class="filter-sort">
+                        <!-- Aquí irían los controles de filtro y ordenación -->
+                        <i class="fa-solid fa-filter"></i>
+                        <i class="fa-solid fa-arrow-down-a-z"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- El contenido cambiará aquí. Mostramos la biblioteca por defecto -->
+            <div id="content-display">
+                <div id="game-library-grid">
+                    <!-- Las tarjetas de juego se generan aquí -->
+                    <div class="game-card" data-title="Cyberpunk 2077">
+                        <img src="https://cdn1.epicgames.com/offer/77f2b98e2cef40c8a7437518bf420e47/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a4c4a441ac08b36c3b11f" alt="Cyberpunk 2077">
+                        <div class="card-info">
+                            <h3>Cyberpunk 2077</h3>
+                            <button class="launch-btn">Iniciar</button>
+                        </div>
+                    </div>
+                    <div class="game-card" data-title="Alan Wake 2">
+                        <img src="https://cdn1.epicgames.com/offer/5cb6a2698a3e4ffc806c141a710489b3/EGS_AlanWake2_RemedyEntertainment_S1_2560x1440-4272228252a6374a4231a8cd629614a2" alt="Alan Wake 2">
+                        <div class="card-info">
+                            <h3>Alan Wake 2</h3>
+                            <button class="launch-btn">Iniciar</button>
+                        </div>
+                    </div>
+                    <div class="game-card" data-title="Fortnite">
+                        <img src="https://cdn1.epicgames.com/offer/fn/29S1_Tall_2560x1440_2560x1440-9b2a703187214d40b5aa902d22f36545" alt="Fortnite">
+                        <div class="card-info">
+                            <h3>Fortnite</h3>
+                            <button class="launch-btn">Iniciar</button>
+                        </div>
+                    </div>
+                    <div class="game-card" data-title="Rocket League">
+                        <img src="https://cdn1.epicgames.com/offer/9773aa1aa54f4f7b80e44db40a764f3b/EGS_RocketLeague_PsyonixLLC_S1_2560x1440-9639767a3da3f2843443edac7406a51d" alt="Rocket League">
+                        <div class="card-info">
+                            <h3>Rocket League</h3>
+                            <button class="launch-btn">Iniciar</button>
+                        </div>
+                    </div>
+                    <div class="game-card" data-title="Genshin Impact">
+                        <img src="https://cdn1.epicgames.com/offer/b7b4d538356c4727825806082e453655/EGS_GenshinImpact_miHoYoLimited_S1_2560x1440-a8d20968869e893c053333671420d2a2" alt="Genshin Impact">
+                        <div class="card-info">
+                            <h3>Genshin Impact</h3>
+                            <button class="launch-btn">Iniciar</button>
+                        </div>
+                    </div>
+                     <div class="game-card" data-title="Valorant">
+                        <img src="https://cdn1.epicgames.com/offer/4723935f429d4c1e8721c3b81216262d/EGS_VALORANT_RiotGames_S1_2560x1440-a31227548965313a91333333a052952f" alt="Valorant">
+                        <div class="card-info">
+                            <h3>Valorant</h3>
+                            <button class="launch-btn">Iniciar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

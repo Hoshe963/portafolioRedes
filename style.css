@@ -1,0 +1,230 @@
+/* --- FUENTES Y VARIABLES DE DISEÑO --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+    --epic-dark-bg: #121212;
+    --epic-content-bg: #202020;
+    --epic-sidebar-bg: #2a2a2a;
+    --epic-blue: #0078f2;
+    --epic-text-primary: #ffffff;
+    --epic-text-secondary: #a0a0a0;
+    --epic-border-color: #3a3a3a;
+    --font-main: 'Inter', sans-serif;
+}
+
+/* --- RESET Y ESTILOS GLOBALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--epic-dark-bg);
+    color: var(--epic-text-primary);
+    overflow: hidden;
+}
+
+/* --- CONTENEDOR PRINCIPAL DE LA APLICACIÓN --- */
+#epic-launcher {
+    display: flex;
+    height: 100vh;
+}
+
+/* --- BARRA LATERAL (SIDEBAR) --- */
+#sidebar {
+    width: 260px;
+    background-color: var(--epic-dark-bg);
+    border-right: 1px solid var(--epic-border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    flex-shrink: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+.sidebar-header i {
+    margin-right: 12px;
+}
+.sidebar-header span {
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    color: var(--epic-text-secondary);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.nav-link i {
+    width: 30px;
+    font-size: 18px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.nav-link:hover {
+    color: var(--epic-text-primary);
+    background-color: var(--epic-content-bg);
+}
+
+.nav-link.active {
+    color: var(--epic-text-primary);
+    border-left-color: var(--epic-blue);
+    background-color: var(--epic-content-bg);
+}
+
+.sidebar-footer {
+    padding-top: 20px;
+    border-top: 1px solid var(--epic-border-color);
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+#main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--epic-content-bg);
+    overflow: hidden;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: var(--epic-content-bg);
+    border-bottom: 1px solid var(--epic-border-color);
+    flex-shrink: 0;
+}
+
+#view-title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--epic-dark-bg);
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.search-bar i {
+    color: var(--epic-text-secondary);
+}
+
+#game-search-input {
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--epic-text-primary);
+    font-size: 14px;
+    margin-left: 10px;
+    width: 200px;
+}
+
+.filter-sort i {
+    font-size: 18px;
+    color: var(--epic-text-secondary);
+    cursor: pointer;
+    margin-left: 15px;
+    transition: color 0.2s ease;
+}
+.filter-sort i:hover {
+    color: var(--epic-text-primary);
+}
+
+/* --- CUADRÍCULA DE LA BIBLIOTECA --- */
+#content-display {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 30px;
+}
+
+#game-library-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.game-card {
+    background-color: var(--epic-sidebar-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.game-card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.card-info h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.launch-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--epic-blue);
+    color: var(--epic-text-primary);
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.launch-btn:hover {
+    background-color: #008cff;
+}
