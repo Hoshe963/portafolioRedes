@@ -3,108 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epic Games Launcher</title>
-    
-    <!-- Enlace a la hoja de estilos -->
+    <title>Epic Games</title>
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Iconos de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div id="epic-launcher">
-        <!-- ================== BARRA LATERAL DE NAVEGACIÓN ================== -->
+    <!-- ======================= LANZADOR DE EPIC GAMES ======================= -->
+    <div id="epic-client">
+        <!-- BARRA LATERAL IZQUIERDA -->
         <aside id="sidebar">
-            <div class="sidebar-header">
-                <!-- Puedes reemplazar esto con un logo SVG de Epic Games -->
-                <i class="fa-brands fa-epic-games"></i>
-                <span>EPIC GAMES</span>
+            <div class="sidebar-top">
+                <div class="logo"><svg width="40" height="40" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M512 0C229.232 0 0 229.232 0 512S229.232 1024 512 1024S1024 794.768 1024 512S794.768 0 512 0ZM769.664 608.896C769.664 676.864 715.504 731.024 647.536 731.024H483.904V819.2H401.344V460.8H647.536C715.504 460.8 769.664 514.96 769.664 582.928V608.896ZM401.344 204.8V403.2H716.8V204.8H401.344Z" fill="white"/></svg></div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#" class="active" data-view="store"><i class="fa-solid fa-store"></i><span>Store</span></a></li>
+                        <li><a href="#" data-view="library"><i class="fa-solid fa-book-bookmark"></i><span>Biblioteca</span></a></li>
+                        <li><a href="#" data-view="unreal"><i class="fa-brands fa-unreal"></i><span>Unreal Engine</span></a></li>
+                    </ul>
+                </nav>
+                <div class="quick-launch">
+                    <p class="section-title">INICIO RÁPIDO</p>
+                    <ul>
+                        <!-- Enlace actualizado con tu nombre de imagen -->
+                        <li><a href="#" id="launch-snake-game"><img src="img/game_culebrita.png" alt="Snake Game Icon"><span>Snake Game</span></a></li>
+                    </ul>
+                </div>
             </div>
-            <nav class="sidebar-nav">
-                <ul>
-                    <li><a href="#" class="nav-link" data-view="store"><i class="fa-solid fa-store"></i><span>Tienda</span></a></li>
-                    <li><a href="#" class="nav-link active" data-view="library"><i class="fa-solid fa-gamepad"></i><span>Biblioteca</span></a></li>
-                    <li><a href="#" class="nav-link" data-view="downloads"><i class="fa-solid fa-download"></i><span>Descargas</span></a></li>
-                    <li><a href="#" class="nav-link" data-view="friends"><i class="fa-solid fa-user-group"></i><span>Amigos</span></a></li>
-                    <li><a href="#" class="nav-link" data-view="unreal"><i class="fa-brands fa-unreal"></i><span>Unreal Engine</span></a></li>
-                </ul>
-            </nav>
-            <div class="sidebar-footer">
-                <a href="#" class="nav-link" data-view="settings"><i class="fa-solid fa-gear"></i><span>Ajustes</span></a>
-                <a href="#" class="nav-link" data-view="profile"><i class="fa-solid fa-circle-user"></i><span>Mi Perfil</span></a>
+            <div class="sidebar-bottom">
+                <a href="#" class="download-status"><i class="fa-solid fa-circle-down"></i><span class="notification-badge">1</span></a>
+                <a href="#" class="profile"><span class="profile-initial">H</span></a>
             </div>
         </aside>
 
-        <!-- ================== CONTENIDO PRINCIPAL ================== -->
+        <!-- CONTENIDO PRINCIPAL -->
         <main id="main-content">
-            <header class="content-header">
-                <h1 id="view-title">Biblioteca</h1>
-                <div class="header-controls">
-                    <div class="search-bar">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="game-search-input" placeholder="Buscar...">
+            <!-- ======================= VISTA DE TIENDA ======================= -->
+            <div id="store-view" class="view active">
+                <header class="store-header">
+                    <div class="header-left">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <div class="search-bar">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Buscar en la tienda">
+                        </div>
                     </div>
-                    <div class="filter-sort">
-                        <!-- Aquí irían los controles de filtro y ordenación -->
-                        <i class="fa-solid fa-filter"></i>
-                        <i class="fa-solid fa-arrow-down-a-z"></i>
+                    <div class="header-right">
+                        <a href="#">Descubrir</a>
+                        <a href="#">Lista de deseos</a>
+                        <a href="#">Carrito</a>
+                        <div class="user-actions">
+                            <i class="fa-solid fa-user-group"></i>
+                            <span class="notification-badge">13</span>
+                        </div>
                     </div>
+                </header>
+                <div class="store-body">
+                    <div class="store-main-content">
+                        <section class="hero-section">
+                            <!-- Ruta de imagen corregida -->
+                            <img src="img/game_civilizationVii.png" alt="Civilization VII" class="hero-bg">
+                            <div class="hero-info">
+                                <p class="offer-tag">AHORA EN OFERTA</p>
+                                <h2>CIVILIZATION VII</h2>
+                                <p class="description">Vuelve la galardonada franquicia de juegos de estrategia con un nuevo y revolucionario capítulo.</p>
+                                <div class="price-box">
+                                    <span class="discount">-15%</span>
+                                    <span class="original-price">220 PEN</span>
+                                    <span class="final-price">187 PEN</span>
+                                </div>
+                                <div class="hero-actions">
+                                    <button class="buy-now-btn">Comprar ahora</button>
+                                    <a href="#" class="wishlist-link"><i class="fa-solid fa-plus"></i> A la lista de deseos</a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <aside class="store-sidebar">
+                        <!-- Rutas de la barra lateral corregidas -->
+                        <ul>
+                            <li><a href="#"><img src="img/game_wuthering.png" alt="Wuthering Waves"><div><h3>Wuthering Waves</h3></div></a></li>
+                            <li><a href="#"><img src="img/game_blackMythWukong.png" alt="Black Myth: Wukong"><div><h3>Black Myth: Wukong</h3></div></a></li>
+                            <li><a href="#" class="active"><img src="img/game_civilizationVii.png" alt="Civilization VII"><div><h3>Sid Meier's Civilization® VII</h3></div></a></li>
+                            <li><a href="#"><img src="img/game_honkaiStarRail.png" alt="Honkai: Star Rail"><div><h3>Honkai: Star Rail</h3></div></a></li>
+                            <li><a href="#"><img src="img/game_powerWashSimulation2.png" alt="PowerWash Simulator 2"><div><h3>PowerWash Simulator 2</h3></div></a></li>
+                            <li><a href="#"><img src="img/game_crystalOfAtlan.png" alt="Crystal of Atlan"><div><h3>Crystal of Atlan</h3></div></a></li>
+                        </ul>
+                    </aside>
                 </div>
-            </header>
+            </div>
 
-            <!-- El contenido cambiará aquí. Mostramos la biblioteca por defecto -->
-            <div id="content-display">
-                <div id="game-library-grid">
-                    <!-- Las tarjetas de juego se generan aquí -->
-                    <div class="game-card" data-title="Cyberpunk 2077">
-                        <img src="https://cdn1.epicgames.com/offer/77f2b98e2cef40c8a7437518bf420e47/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a4c4a441ac08b36c3b11f" alt="Cyberpunk 2077">
-                        <div class="card-info">
-                            <h3>Cyberpunk 2077</h3>
-                            <button class="launch-btn">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="game-card" data-title="Alan Wake 2">
-                        <img src="https://cdn1.epicgames.com/offer/5cb6a2698a3e4ffc806c141a710489b3/EGS_AlanWake2_RemedyEntertainment_S1_2560x1440-4272228252a6374a4231a8cd629614a2" alt="Alan Wake 2">
-                        <div class="card-info">
-                            <h3>Alan Wake 2</h3>
-                            <button class="launch-btn">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="game-card" data-title="Fortnite">
-                        <img src="https://cdn1.epicgames.com/offer/fn/29S1_Tall_2560x1440_2560x1440-9b2a703187214d40b5aa902d22f36545" alt="Fortnite">
-                        <div class="card-info">
-                            <h3>Fortnite</h3>
-                            <button class="launch-btn">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="game-card" data-title="Rocket League">
-                        <img src="https://cdn1.epicgames.com/offer/9773aa1aa54f4f7b80e44db40a764f3b/EGS_RocketLeague_PsyonixLLC_S1_2560x1440-9639767a3da3f2843443edac7406a51d" alt="Rocket League">
-                        <div class="card-info">
-                            <h3>Rocket League</h3>
-                            <button class="launch-btn">Iniciar</button>
-                        </div>
-                    </div>
-                    <div class="game-card" data-title="Genshin Impact">
-                        <img src="https://cdn1.epicgames.com/offer/b7b4d538356c4727825806082e453655/EGS_GenshinImpact_miHoYoLimited_S1_2560x1440-a8d20968869e893c053333671420d2a2" alt="Genshin Impact">
-                        <div class="card-info">
-                            <h3>Genshin Impact</h3>
-                            <button class="launch-btn">Iniciar</button>
-                        </div>
-                    </div>
-                     <div class="game-card" data-title="Valorant">
-                        <img src="https://cdn1.epicgames.com/offer/4723935f429d4c1e8721c3b81216262d/EGS_VALORANT_RiotGames_S1_2560x1440-a31227548965313a91333333a052952f" alt="Valorant">
-                        <div class="card-info">
-                            <h3>Valorant</h3>
-                            <button class="launch-btn">Iniciar</button>
-                        </div>
+            <!-- ======================= VISTA DE BIBLIOTECA ======================= -->
+            <div id="library-view" class="view">
+                <header class="library-header">
+                    <div class="top-bar"><h1>Biblioteca</h1><i class="fa-solid fa-rotate-right"></i></div>
+                    <nav class="sub-nav"><a href="#" class="active">Todos</a><a href="#">Favoritos</a><a href="#">Chupapis</a><a href="#" class="add-collection"><i class="fa-solid fa-plus"></i></a></nav>
+                    <div class="filter-bar"><div class="sort-control"><label for="sort-by">Ordenar por:</label><select id="sort-by"><option>Orden alfabético A-Z</option><option>Recientes</option></select></div><div class="view-toggles"><button class="active"><i class="fa-solid fa-grip"></i></button><button><i class="fa-solid fa-list"></i></button></div></div>
+                </header>
+                <div class="game-grid-container">
+                    <div class="game-grid">
+                        <!-- Rutas de la biblioteca corregidas -->
+                        <div class="game-card"><img src="img/game_deadIsland2.png" alt="Dead Island 2"><div class="card-info"><h3>Dead Island 2</h3><p class="achievements">0/59 logros</p><a href="#" class="install-link"><i class="fa-solid fa-download"></i> Instalar</a></div></div>
+                        <div class="game-card"><img src="img/game_deathStranding.png" alt="Death Stranding"><div class="card-info"><h3>Death Stranding</h3><p class="achievements">0/63 logros</p><a href="#" class="install-link"><i class="fa-solid fa-download"></i> Instalar</a></div></div>
+                        <div class="game-card with-addon"><img src="img/game_deathStranding.png" alt="Death Stranding"><div class="addon-banner">3 COMPLEMENTOS</div><div class="card-info"><h3>Death Stranding</h3><p class="achievements">...</p><a href="#" class="install-link"><i class="fa-solid fa-download"></i> Instalar</a></div></div>
+                        <div class="game-card"><img src="img/game_DisneySpeedStorm.png" alt="Disney Speedstorm"><div class="card-info"><h3>Disney Speedstorm</h3><p class="achievements">0/24 logros</p><a href="#" class="install-link"><i class="fa-solid fa-download"></i> Instalar</a></div></div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
 
-    <!-- Enlace al archivo JavaScript -->
+    <!-- ======================= CONTENEDOR DEL JUEGO (Oculto por defecto) ======================= -->
+    <div id="game-container">
+        <div class="game-header">
+            <button id="back-to-launcher-btn"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</button>
+            <div class="game-score">Puntuación: <span id="score">0</span></div>
+        </div>
+        <canvas id="snake-canvas"></canvas>
+    
+
+     <!-- Pantalla de Game Over (Oculta por defecto) -->
+        <div id="game-over-screen">
+            <h2>Juego Terminado</h2>
+            <p>Puntuación Final: <span id="final-score">0</span></p>
+            <button id="retry-btn">Volver a Intentarlo</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
